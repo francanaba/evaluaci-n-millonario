@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 import \{ BrowserRouter, Route, Routes \} from 'react-router-dom'\
+import Index from './pages/index'\
+import AdminDashboard from './pages/admin-dashboard'\
+import PublicResults from './pages/public-results'\
+\
+function NotFound() \{\
+  return (\
+    <div className="min-h-screen flex items-center justify-center">\
+      <div className="text-center">\
+        <h1 className="text-4xl font-bold mb-4">404</h1>\
+        <p className="text-xl mb-4">P\'e1gina no encontrada</p>\
+        <a href="/" className="text-blue-500 hover:underline">\
+          Volver al inicio\
+        </a>\
+      </div>\
+    </div>\
+  )\
+\}\
+\
+export function App() \{\
+  return (\
+    <BrowserRouter>\
+      <Routes>\
+        <Route path="/" element=\{<Index />\} />\
+        <Route path="/admin" element=\{<AdminDashboard />\} />\
+        <Route path="/resultados/:token" element=\{<PublicResults />\} />\
+        <Route path="*" element=\{<NotFound />\} />\
+      </Routes>\
+    </BrowserRouter>\
+  )\
+\}\
+\
+}
